@@ -1,23 +1,73 @@
-# See https://help.github.com/articles/ignoring-files/ for more about ignoring files.
-
-# dependencies
+# ================
+# Стандартные исключения React (Create React App)
+# ================
 /node_modules
 /.pnp
 .pnp.js
-
-# testing
 /coverage
-
-# production
 /build
-
-# misc
 .DS_Store
-.env.local
-.env.development.local
-.env.test.local
-.env.production.local
-
+.env*.local
 npm-debug.log*
 yarn-debug.log*
 yarn-error.log*
+
+# ================
+# Дополнительные важные исключения
+# ================
+
+# Системные файлы
+Thumbs.db
+._*
+.Spotlight-V100
+.Trashes
+
+# Редакторы кода
+.idea/
+.vscode/
+*.swp
+*.swo
+
+# Временные файлы
+*.tmp
+*.temp
+
+# Логи
+*.log
+
+# Артефакты сборки
+/dist/
+/.cache/
+/out/
+.next/  # Для Next.js
+
+# Деплой
+/.env
+/.env.production
+.env.staging
+
+# Тесты
+/junit.xml
+/test-results/
+
+# Пакетные менеджеры
+package-lock.json
+yarn.lock
+pnpm-lock.yaml
+
+# Git
+!.gitkeep
+*.orig
+
+# Бинарные файлы (если не используете Git LFS)
+*.png
+*.jpg
+*.jpeg
+*.gif
+*.ico
+*.svg
+*.pdf
+*.zip
+*.tar.gz
+*.exe
+*.dll
