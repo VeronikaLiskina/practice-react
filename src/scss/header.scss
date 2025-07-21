@@ -1,0 +1,190 @@
+.container {
+  width: 100%;
+  padding: 0 15px;
+  margin: 0 auto;
+}
+
+.header {
+  height: 80px;
+  background-color: #000;
+  font-family: "Bebas Neue", sans-serif;
+  font-weight: 400;
+  color: #fff;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  &__row {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    height: 100%;
+    position: relative;
+  }
+
+  &__logo {
+    order: 1;
+    display: flex;
+    align-items: flex-start;
+    justify-content: left;
+    img {
+      height: 100px;
+      width: 100px;
+      object-fit: contain;
+      object-position: 0 0;
+    }
+  }
+
+  &__menu {
+    order: 2;
+    display: flex;
+    justify-content: center;
+    flex: 1 1 auto;
+    gap: clamp(15px, 2vw, 30px);
+
+    a {
+      font-size: clamp(18px, 2vw, 24px);
+      font-weight: bold;
+      color: #fff;
+      text-decoration: none;
+    }
+  }
+
+  &__phone {
+    order: 3;
+    font-size: 24px;
+    margin: 0 20px;
+    white-space: nowrap;
+  }
+
+  &__button {
+    order: 4;
+    min-width: 200px; // Минимальная ширина
+    max-width: fit-content; // Максимальная ширина по содержимому
+    flex: 0 0 auto; // Не растягивается и не сжимается
+    width: auto; // Ширина по содержимому
+    padding: 10px 20px; // Фиксированные отступы вместо динамических
+    height: 40px; // Фиксированная высота
+    background: #fff;
+    border: 3px solid #000;
+    border-radius: 40px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-weight: bold;
+    font-size: clamp(14px, 1.2vw, 18px);
+    color: #000;
+    cursor: pointer;
+    text-decoration: none;
+    text-align: center;
+
+    &:hover {
+      background: #f0f0f0;
+    }
+  }
+
+  &__burger {
+    display: none;
+  }
+}
+
+@media (max-width: 979px) {
+  .header {
+    &__row {
+      justify-content: flex-end;
+    }
+
+    &__burger {
+      display: block;
+      position: relative;
+      width: 30px;
+      height: 18px;
+      z-index: 1001;
+      cursor: pointer;
+      background: none;
+      border: none;
+
+      span,
+      &::before,
+      &::after {
+        content: "";
+        position: absolute;
+        left: 0;
+        width: 100%;
+        height: 2px;
+        background: #fff;
+        transition: 0.3s;
+      }
+
+      span {
+        top: 50%;
+        transform: translateY(-50%);
+      }
+
+      &::before {
+        top: 0;
+      }
+
+      &::after {
+        bottom: 0;
+      }
+
+      &.active {
+        span {
+          opacity: 0;
+        }
+
+        &::before {
+          transform: rotate(45deg);
+          top: 50%;
+        }
+
+        &::after {
+          transform: rotate(-45deg);
+          bottom: 50%;
+        }
+      }
+    }
+
+    &.menu-open {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 50vh;
+      background: #000;
+      z-index: 1000;
+
+      .header__row {
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        gap: 20px;
+        height: 100%;
+      }
+
+      .header__menu,
+      .header__logo,
+      .header__phone,
+      .header__button {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+      }
+
+      .header__menu a {
+        font-size: 24px;
+        margin-bottom: 10px;
+      }
+
+      .header__button {
+        width: auto;
+        padding: 10px 20px;
+      }
+
+      .header__logo img {
+        height: 60px;
+        width: 60px;
+      }
+    }
+  }
+}

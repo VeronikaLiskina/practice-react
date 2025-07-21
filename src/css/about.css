@@ -1,0 +1,232 @@
+@charset "UTF-8";
+.about {
+  background-color: #efefef;
+  width: 100%;
+  position: relative;
+  overflow: visible;
+}
+.about__row {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin: 0 auto;
+  max-width: 100%;
+  position: relative;
+  z-index: 1;
+}
+.about__column:first-child {
+  flex: 1;
+  display: flex;
+  position: relative;
+  z-index: 1;
+}
+.about__column:last-child {
+  flex: 2;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+}
+.about__image-wrapper {
+  position: relative;
+  width: 132px;
+  height: 132px;
+}
+@media (min-width: 768px) {
+  .about__image-wrapper {
+    width: 150px;
+    height: 150px;
+  }
+}
+@media (min-width: 992px) {
+  .about__image-wrapper {
+    width: 220px;
+    height: 220px;
+  }
+}
+@media (min-width: 1200px) {
+  .about__image-wrapper {
+    width: 250px;
+    height: 250px;
+  }
+}
+.about__image {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
+  overflow: hidden;
+  z-index: 2;
+  align-items: center;
+}
+.about__image img {
+  width: 100%;
+  height: 100%;
+  -o-object-fit: cover;
+     object-fit: cover;
+  -o-object-position: 0 0;
+     object-position: 0 0;
+  position: relative;
+}
+.about__blue-block {
+  position: absolute;
+  top: 0px;
+  right: 45px;
+  width: 60px;
+  height: 120px;
+  background-color: #0038af;
+  transform: rotate(45deg);
+  z-index: 1;
+  transition: transform 0.3s ease-out; /* Гладкая анимация */
+  animation: float-blue-block 6s ease-in-out infinite;
+}
+@media (min-width: 768px) {
+  .about__blue-block {
+    top: -50px;
+    right: 0px;
+    width: 80px;
+    height: 160px;
+  }
+}
+@media (min-width: 992px) {
+  .about__blue-block {
+    top: -60px;
+    left: 60px;
+    width: 100px;
+    height: 200px;
+  }
+}
+@media (min-width: 1200px) {
+  .about__blue-block {
+    top: -80px;
+    right: -60px;
+    width: 120px;
+    height: 240px;
+  }
+}
+@media (min-width: 1600px) {
+  .about__blue-block {
+    top: -100px;
+    right: -80px;
+    width: 130px;
+    height: 260px;
+  }
+}
+.about__title {
+  font-size: 38px;
+  font-weight: 700;
+  line-height: 1.2;
+  color: #1c1c1c;
+  text-align: center;
+}
+.about__text {
+  font-size: 20px;
+  line-height: 1.6;
+  color: #333333;
+  text-align: left;
+}
+.about .container {
+  padding: 2rem 0 0 0;
+}
+@media (min-width: 768px) {
+  .about .container {
+    padding: 2.5rem 0 0 0;
+  }
+}
+@media (min-width: 992px) {
+  .about .container {
+    padding: 3rem 0 0 0;
+  }
+}
+@media (min-width: 1200px) {
+  .about .container {
+    padding: 3.8rem 0 0 0;
+  }
+}
+
+@keyframes float-blue-block {
+  0%, 100% {
+    transform: rotate(45deg) translateY(0) translate(0, 0);
+  }
+  50% {
+    transform: rotate(45deg) translateY(-15px) translate(0, 0);
+  }
+}
+@media (max-width: 300px) {
+  .about__title {
+    font-size: 2rem;
+    margin-bottom: 0.3rem;
+  }
+  .about__text {
+    font-size: 1rem;
+  }
+  .about__image {
+    width: 100px;
+    height: 100px;
+  }
+}
+@media (min-width: 300px) and (max-width: 767px) {
+  .about__title {
+    font-size: 2.375rem;
+    margin-bottom: 0.5rem;
+  }
+  .about__text {
+    font-size: 1.375rem;
+  }
+  .about__image {
+    width: 100px;
+    height: 100px;
+  }
+}
+@media (min-width: 768px) and (max-width: 991px) {
+  .about__row {
+    flex-direction: row;
+    gap: 1.875rem;
+    max-width: 740px;
+  }
+  .about__title {
+    font-size: 1.875rem; /* 30px */
+  }
+  .about__text {
+    font-size: 1.25rem;
+    text-align: left;
+  }
+  .about__image {
+    width: 120px;
+    height: 120px;
+  }
+}
+@media (min-width: 992px) and (max-width: 1199px) {
+  .about__row {
+    flex-direction: row;
+    gap: 2.5rem;
+    max-width: 960px;
+  }
+  .about__title {
+    font-size: 2.375rem;
+  }
+  .about__text {
+    font-size: 1.375rem;
+  }
+  .about__image {
+    width: 140px;
+    height: 140px;
+  }
+}
+@media (min-width: 1200px) {
+  .about__row {
+    flex-direction: row;
+    gap: 3.75rem;
+    max-width: 1140px;
+  }
+  .about__title {
+    font-size: 2.625rem;
+  }
+  .about__text {
+    font-size: 1.5rem;
+  }
+  .about__image {
+    width: 160px;
+    height: 160px;
+  }
+}
