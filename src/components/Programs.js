@@ -1,4 +1,10 @@
 import React from "react";
+import WebProgramImage from "../img/main/programs/1_.png.webp";
+import Program1CImage from "../img/main/programs/1с.gif"; // предположительные пути
+import ProgramAIImage from "../img/main/programs/pc.webp";
+import ProgramCampImage from "../img/main/programs/camp.webp";
+import ProgramElectronicsImage from "../img/main/programs/electronics.webp";
+import ProgramJavaImage from "../img/main/programs/java.webp";
 
 class Programs extends React.Component {
   render() {
@@ -7,7 +13,8 @@ class Programs extends React.Component {
         id: 1,
         title: "ВЕБ-ПРОГРАММИРОВАНИЕ ДЛЯ ВЗРОСЛЫХ",
         className: "program-web",
-        modifier: "full-width", // Модификатор для полной ширины
+        modifier: "full-width",
+        image: WebProgramImage,
       },
       {
         id: 2,
@@ -23,7 +30,8 @@ class Programs extends React.Component {
         id: 4,
         title: "ЛЕТНИЙ ЛАГЕРЬ ДЛЯ ДЕТЕЙ",
         className: "program-camp",
-        modifier: "full-width", // Модификатор для полной ширины
+        modifier: "full-width",
+        image: ProgramCampImage,
       },
       {
         id: 5,
@@ -57,10 +65,17 @@ class Programs extends React.Component {
                     item.modifier ? `programs__item--${item.modifier}` : ""
                   }`}
                 >
-                  <h3 className="programs__name">{item.title}</h3>
-                  <div className="programs__link">
-                    <a href="#">Подробнее</a>
+                  <div className="programs__column">
+                    <h3 className="programs__name">{item.title}</h3>
+                    <div className="programs__link">
+                      <a href="#">Подробнее</a>
+                    </div>
                   </div>
+                  {item.modifier && (
+                    <div className="programs__image ibg">
+                      <img src={item.image} alt={item.title} />
+                    </div>
+                  )}
                 </div>
               ))}
             </div>

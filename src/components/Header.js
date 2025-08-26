@@ -23,7 +23,7 @@ class Header extends React.Component {
   }
 
   updateMobileState() {
-    this.setState({ isMobile: window.innerWidth < 980 });
+    this.setState({ isMobile: window.innerWidth < 992 });
   }
 
   toggleMenu() {

@@ -1,19 +1,26 @@
 .hero {
+    flex: 1 1 100%;
+    font-family: Arial, "Helvetica Neue", Helvetica, sans-serif;
     padding: 60px 40px;
     color: #000;
     position: relative;
     .container {
         position: relative;
         z-index: 1;
+        display: flex;
+        flex-direction: column;
+        flex: 1 1 100%;
     }
 
     &__row {
+        flex: 1 1 100%;
         display: flex;
         flex-direction: column;
         gap: 2.5rem;
         align-items: center;
     }
     &__column {
+        flex: 1 1 100%;
         display: flex;
         flex-direction: column;
         align-items: center;
@@ -24,7 +31,6 @@
     }
     &__decor {
         position: absolute;
-
         z-index: 10;
         width: 60px;
         height: 60px;
@@ -131,7 +137,7 @@
         & img {
             max-height: 580px;
             max-width: 630px;
-            flex: 0 0 630px;
+            flex: 1 1 630px;
         }
     }
     &__address-1 {
@@ -171,18 +177,6 @@
             height: 25px;
         }
     }
-    .container {
-        padding: 2rem 0 0 0;
-        @media (min-width: 768px) {
-            padding: 2.5rem 0 0 0;
-        }
-        @media (min-width: 992px) {
-            padding: 3.5rem 0 0 0;
-        }
-        @media (min-width: 1200px) {
-            padding: 4rem 0 0 0;
-        }
-    }
 }
 
 @keyframes float-heart {
@@ -215,13 +209,13 @@
         animation-timing-function: ease;
     }
 }
-@media (max-width: 300px) {
+@media (max-width: 420px) {
     .hero {
         &__text {
-            font-size: 1.8rem;
+            font-size: 2rem;
         }
         &__title {
-            font-size: 0.8rem;
+            font-size: 1.1rem;
         }
         &__image {
             max-height: 300px;
@@ -233,18 +227,6 @@
         }
     }
 }
-
-@media (min-width: 300px) and (max-width: 400px) {
-    .hero {
-        &__text {
-            font-size: 2.35rem;
-        }
-        &__title {
-            font-size: 1rem;
-        }
-    }
-}
-
 @media (max-width: 767px) {
     .hero {
         padding: 1.25rem 0;
@@ -261,6 +243,13 @@
         }
         &__address-2 {
             justify-content: center;
+            align-items: center;
+            & .hero-address__title {
+                font-size: 1.5rem;
+                @media (max-width: 420px) {
+                    font-size: 1.1rem;
+                }
+            }
         }
     }
 }
@@ -290,7 +279,7 @@
         &__address-2 {
             margin: 30px auto 0;
             & .hero-address__title {
-                font-size: 1rem;
+                font-size: 1.6rem;
             }
         }
     }
@@ -313,10 +302,13 @@
         &__text {
             font-size: 4.75rem;
         }
+
         &__image {
+            flex: 1 1 100%;
             & img {
-                max-height: 500px;
-                max-width: 580px;
+                max-height: 490px;
+                max-width: 500px;
+                flex: 1 1 auto;
             }
         }
         &__address-1 {

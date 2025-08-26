@@ -56,24 +56,6 @@
 .photo-slider__arrow--right {
   right: 1.25rem;
 }
-.photo-slider .container {
-  padding: 2rem 0 0 0;
-}
-@media (min-width: 768px) {
-  .photo-slider .container {
-    padding: 2.5rem 0 0 0;
-  }
-}
-@media (min-width: 992px) {
-  .photo-slider .container {
-    padding: 3rem 0 0 0;
-  }
-}
-@media (min-width: 1200px) {
-  .photo-slider .container {
-    padding: 3.8rem 0 0 0;
-  }
-}
 
 @media (min-width: 25rem) and (max-width: 48rem) {
   .photo-slider {

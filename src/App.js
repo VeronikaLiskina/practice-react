@@ -5,6 +5,7 @@ import About from "./components/About";
 import Programs from "./components/Programs";
 import Footer from "./components/Footer";
 import Format_study from "./components/Format_study";
+import Benefits from "./components/Benefits";
 class App extends React.Component {
   render() {
     return (
@@ -15,6 +16,7 @@ class App extends React.Component {
           <About />
           <Programs />
           <Format_study />
+          <Benefits />
         </main>
         <Footer />
       </div>
