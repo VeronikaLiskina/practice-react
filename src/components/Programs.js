@@ -1,10 +1,6 @@
 import React from "react";
 import WebProgramImage from "../img/main/programs/1_.png.webp";
-import Program1CImage from "../img/main/programs/1с.gif"; // предположительные пути
-import ProgramAIImage from "../img/main/programs/pc.webp";
 import ProgramCampImage from "../img/main/programs/camp.webp";
-import ProgramElectronicsImage from "../img/main/programs/electronics.webp";
-import ProgramJavaImage from "../img/main/programs/java.webp";
 
 class Programs extends React.Component {
   render() {
