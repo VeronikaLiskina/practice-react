@@ -47,9 +47,11 @@
   &__gallery {
     display: grid;
     gap: 1rem;
+    grid-template-columns: 1fr;
 
     @media (min-width: 576px) {
-      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      grid-template-columns: 1fr 1fr;
+      grid-template-rows: auto auto;
     }
 
     @media (min-width: 768px) {
@@ -57,11 +59,9 @@
     }
     @media (min-width: 992px) {
       gap: 2rem;
-      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
     }
     @media (min-width: 1200px) {
       gap: 2.5rem;
-      grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
     }
   }
 
@@ -77,6 +77,7 @@
     transition: all 0.3s ease;
     width: 100%;
     overflow: visible;
+
     @media (min-width: 300px) {
       min-height: 316px;
     }
@@ -93,6 +94,7 @@
     @media (min-width: 1200px) {
       min-height: 402px;
     }
+
     &:hover {
       transform: translateY(-5px);
       box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
@@ -104,7 +106,24 @@
         flex-direction: row;
       }
     }
+
+    // Для обычных элементов (1C и Java) - ставим их рядом
+    &:not(.programs__item--full-width) {
+      @media (min-width: 576px) {
+        min-height: 280px; // Меньшая высота для компактных элементов
+      }
+      @media (min-width: 768px) {
+        min-height: 300px;
+      }
+      @media (min-width: 992px) {
+        min-height: 320px;
+      }
+      @media (min-width: 1200px) {
+        min-height: 350px;
+      }
+    }
   }
+
   &__column {
     @include flexbox();
     flex-direction: column;
@@ -130,6 +149,7 @@
       padding: 0 2.5rem;
     }
   }
+
   &__image {
     position: absolute;
     width: 100%;
@@ -141,6 +161,7 @@
     z-index: 50;
     overflow: visible;
   }
+
   &__name {
     position: relative;
     font-size: 1.25rem;
@@ -166,47 +187,16 @@
   }
 
   &__link {
-    display: inline-block;
-    background-color: #ffd263;
     padding: 0.6rem 1.2rem;
-    border-radius: 30px;
-    @include flexbox();
-    justify-content: center;
-    align-items: center;
-    transition: all 0.3s ease;
-    z-index: 2;
-    min-height: 55px;
-    width: 265px;
-    @media (min-width: 576px) {
-      max-width: 200px;
-    }
     @media (min-width: 768px) {
       padding: 1rem 2rem;
     }
-
     @media (min-width: 992px) {
       padding: 1rem 1.8rem;
       min-width: 350px;
     }
     @media (min-width: 1200px) {
       padding: 1.5rem 3rem;
-    }
-    a {
-      color: #000;
-      text-decoration: none;
-      font-weight: 700;
-      text-align: center;
-      @media (max-width: 300px) {
-        font-size: 1rem;
-      }
-      @media (min-width: 300px) {
-        font-size: 1.2rem;
-      }
-    }
-
-    &:hover {
-      background-color: #ffc107;
-      transform: scale(1.05);
     }
   }
 
@@ -254,7 +244,6 @@
           top: -70px;
           left: -130px;
         }
-
         @media (min-width: 1200px) {
           min-width: 507px;
           min-height: 544px;
@@ -268,15 +257,13 @@
     background-image: url("../img/main/programs/1с.gif");
   }
 
-  .program-ai {
+  .program-java {
     background-color: #3389ff;
-    overflow: hidden;
-    background-image: url("../img/main/programs/pc.webp");
+    background-image: url("../img/main/programs/java.webp");
   }
 
   .program-camp {
     background-color: #0051ff;
-    // background-image: url("../img/main/programs/roblox.webp");
     .ibg {
       & img {
         @media (min-width: 320px) {
@@ -288,7 +275,6 @@
         @media (min-width: 370px) {
           left: -190px;
         }
-
         @media (min-width: 450px) {
           left: -180px;
           top: -10px;
@@ -315,7 +301,6 @@
           min-width: 465px;
           min-height: 431px;
         }
-
         @media (min-width: 1200px) {
           min-width: 507px;
           min-height: 491px;
@@ -324,15 +309,5 @@
         }
       }
     }
-  }
-
-  .program-electronics {
-    background-color: #0038af;
-    background-image: url("../img/main/programs/electronics.webp");
-  }
-
-  .program-java {
-    background-color: #3389ff;
-    background-image: url("../img/main/programs/java.webp");
   }
 }

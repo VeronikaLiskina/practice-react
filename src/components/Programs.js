@@ -1,4 +1,5 @@
 import React from "react";
+import { Link } from "react-router-dom";
 import WebProgramImage from "../img/main/programs/1_.png.webp";
 import ProgramCampImage from "../img/main/programs/camp.webp";
 
@@ -11,16 +12,19 @@ class Programs extends React.Component {
         className: "program-web",
         modifier: "full-width",
         image: WebProgramImage,
+        path: "/web-programming"
       },
       {
         id: 2,
         title: "1C ПРОГРАММИРОВАНИЕ",
         className: "program-1c",
+        path: "/1c-programming"
       },
       {
         id: 3,
-        title: "ИСКУССТВЕННЫЙ ИНТЕЛЛЕКТ",
-        className: "program-ai",
+        title: "JAVA ENTERPRISE",
+        className: "program-java", 
+        path: "/java"
       },
       {
         id: 4,
@@ -28,17 +32,8 @@ class Programs extends React.Component {
         className: "program-camp",
         modifier: "full-width",
         image: ProgramCampImage,
-      },
-      {
-        id: 5,
-        title: "ЭЛЕКТРОНИКА",
-        className: "program-electronics",
-      },
-      {
-        id: 6,
-        title: "JAVA ENTERPRISE",
-        className: "program-java",
-      },
+        path: "/camp"
+      }
     ];
 
     return (
@@ -63,8 +58,8 @@ class Programs extends React.Component {
                 >
                   <div className="programs__column">
                     <h3 className="programs__name">{item.title}</h3>
-                    <div className="programs__link">
-                      <a href="#">Подробнее</a>
+                    <div className="programs__link link">
+                      <Link to={item.path}>Подробнее</Link>
                     </div>
                   </div>
                   {item.modifier && (

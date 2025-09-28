@@ -59,10 +59,12 @@
 .programs__gallery {
   display: grid;
   gap: 1rem;
+  grid-template-columns: 1fr;
 }
 @media (min-width: 576px) {
   .programs__gallery {
-    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: auto auto;
   }
 }
 @media (min-width: 768px) {
@@ -73,13 +75,11 @@
 @media (min-width: 992px) {
   .programs__gallery {
     gap: 2rem;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
   }
 }
 @media (min-width: 1200px) {
   .programs__gallery {
     gap: 2.5rem;
-    grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
   }
 }
 .programs__item {
@@ -129,6 +129,26 @@
   .programs__item--full-width {
     grid-column: span 2;
     flex-direction: row;
+  }
+}
+@media (min-width: 576px) {
+  .programs__item:not(.programs__item--full-width) {
+    min-height: 280px;
+  }
+}
+@media (min-width: 768px) {
+  .programs__item:not(.programs__item--full-width) {
+    min-height: 300px;
+  }
+}
+@media (min-width: 992px) {
+  .programs__item:not(.programs__item--full-width) {
+    min-height: 320px;
+  }
+}
+@media (min-width: 1200px) {
+  .programs__item:not(.programs__item--full-width) {
+    min-height: 350px;
   }
 }
 .programs__column {
@@ -212,22 +232,7 @@
   }
 }
 .programs__link {
-  display: inline-block;
-  background-color: #ffd263;
   padding: 0.6rem 1.2rem;
-  border-radius: 30px;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  transition: all 0.3s ease;
-  z-index: 2;
-  min-height: 55px;
-  width: 265px;
-}
-@media (min-width: 576px) {
-  .programs__link {
-    max-width: 200px;
-  }
 }
 @media (min-width: 768px) {
   .programs__link {
@@ -244,26 +249,6 @@
   .programs__link {
     padding: 1.5rem 3rem;
   }
-}
-.programs__link a {
-  color: #000;
-  text-decoration: none;
-  font-weight: 700;
-  text-align: center;
-}
-@media (max-width: 300px) {
-  .programs__link a {
-    font-size: 1rem;
-  }
-}
-@media (min-width: 300px) {
-  .programs__link a {
-    font-size: 1.2rem;
-  }
-}
-.programs__link:hover {
-  background-color: #ffc107;
-  transform: scale(1.05);
 }
 .programs .program-web {
   background-color: #0051ff;
@@ -333,10 +318,9 @@
   background-color: #0038af;
   background-image: url("../img/main/programs/1с.gif");
 }
-.programs .program-ai {
+.programs .program-java {
   background-color: #3389ff;
-  overflow: hidden;
-  background-image: url("../img/main/programs/pc.webp");
+  background-image: url("../img/main/programs/java.webp");
 }
 .programs .program-camp {
   background-color: #0051ff;
@@ -397,12 +381,4 @@
     left: -130px;
     top: -60px;
   }
-}
-.programs .program-electronics {
-  background-color: #0038af;
-  background-image: url("../img/main/programs/electronics.webp");
-}
-.programs .program-java {
-  background-color: #3389ff;
-  background-image: url("../img/main/programs/java.webp");
 }

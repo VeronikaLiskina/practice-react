@@ -1,0 +1,245 @@
+@import "mixins.scss";
+
+.intro {
+  position: relative;
+  padding: 60px 0;
+  background-color: #efefef;
+  font-family: Arial, "Helvetica Neue", Helvetica, sans-serif;
+  &__content {
+    width: 100%;
+    @include flexbox();
+    flex-direction: column;
+  }
+  &--web-program {
+    .intro__title {
+      @media (min-width: 320px) and (max-width: 400px) {
+        font-size: 1.28rem;
+      }
+    }
+  }
+  &--1C-program {
+    .intro__text {
+      @media (min-width: 576px) {
+        font-size: 1.3rem;
+      }
+      @media (max-width: 576px) {
+        font-size: 1rem;
+      }
+    }
+  }
+  &--java-program {
+    .intro__image {
+      z-index: 2;
+      margin-bottom: 15px;
+    }
+    .blue-title {
+      width: 50%;
+      @media (max-width: 768px) {
+        width: 100%;
+      }
+    }
+    .intro__text {
+      @media (min-width: 576px) {
+        font-size: 1.3rem;
+      }
+      @media (max-width: 576px) {
+        font-size: 1rem;
+      }
+    }
+  }
+  .btn-back {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    padding: 8px 16px;
+    background: transparent;
+    border: 2px solid #0038af;
+    color: #0038af;
+    font-weight: 600;
+    font-size: 0.9rem;
+    border-radius: 25px;
+    cursor: pointer;
+    transition: all 0.2s ease;
+
+    &:hover {
+      background: rgba(0, 56, 175, 0.05);
+      transform: translateY(-1px);
+    }
+
+    &::before {
+      content: "‹";
+      font-weight: bold;
+      font-size: 1.1rem;
+      line-height: 1;
+      color: #0038af;
+      margin-right: 4px;
+      text-align: center;
+    }
+
+    @media (min-width: 768px) {
+      padding: 6px 12px;
+      font-size: 2rem;
+      gap: 6px;
+      border: 4px solid #0038af;
+      &::before {
+        font-size: 2rem;
+      }
+    }
+    @media (min-width: 992px) {
+      padding: 6px 12px;
+      font-size: 2.4rem;
+      gap: 6px;
+
+      &::before {
+        font-size: 2.2rem;
+      }
+    }
+    @media (max-width: 576px) {
+      padding: 5px 10px;
+      font-size: 0.8rem;
+
+      &::before {
+        font-size: 0.9rem;
+      }
+    }
+  }
+
+  &__title {
+    @include flexbox();
+    flex-direction: column;
+
+    font-size: 2rem;
+    padding: 10px;
+
+    @media (min-width: 576px) {
+      font-size: 3rem;
+      margin-bottom: 30px;
+      text-align: left;
+    }
+
+    @media (max-width: 576px) {
+      font-size: 1.5rem;
+      text-align: center;
+    }
+  }
+
+  &__row {
+    display: flex;
+    flex-direction: column-reverse;
+    align-items: start;
+    justify-content: start;
+
+    @media (min-width: 768px) {
+      flex-direction: row;
+      align-items: start;
+      gap: 30px;
+    }
+  }
+
+  &__image {
+    flex: 0 0 50%;
+    position: relative;
+    top: -110px;
+    right: 20px;
+    z-index: 1;
+
+    img {
+      width: 100%;
+      height: auto;
+    }
+
+    @media (max-width: 992px) {
+      top: -50px;
+      right: 0;
+    }
+
+    @media (max-width: 768px) {
+      flex: 0 0 auto;
+      width: 100%;
+      max-width: 400px;
+      margin: 0 auto;
+      top: 0;
+    }
+  }
+
+  &__column {
+    flex: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column-reverse;
+    gap: 20px;
+
+    @media (min-width: 768px) {
+      gap: 30px;
+      text-align: start;
+      align-items: flex-start;
+      justify-content: flex-start;
+      flex-direction: column-reverse;
+    }
+  }
+
+  &__button {
+    display: inline-block;
+    padding: 15px 40px;
+    width: 463px;
+
+    @media (max-width: 992px) {
+      width: 100%;
+      max-width: 350px;
+    }
+
+    @media (max-width: 768px) {
+      padding: 12px 30px;
+      font-size: 1rem;
+      width: 100%;
+      max-width: 300px;
+    }
+
+    @media (max-width: 576px) {
+      padding: 10px 20px;
+      font-size: 0.9rem;
+      max-width: 260px;
+    }
+  }
+
+  &__text {
+    font-size: 0.9rem;
+    line-height: 1.55;
+    color: #1c1c1c;
+    font-weight: normal;
+    p {
+      margin: 0;
+    }
+
+    @media (min-width: 576px) {
+      font-size: 2.25rem;
+    }
+
+    @media (max-width: 576px) {
+      font-size: 1.4rem;
+      line-height: 1.4;
+    }
+    @media (max-width: 430px) {
+      font-size: 1.2rem;
+      line-height: 1.4;
+    }
+  }
+}
+
+// Дополнительные стили для адаптивности
+@media (min-width: 576px) {
+  .intro {
+    padding: 40px 0;
+
+    .container {
+      padding: 0 15px;
+    }
+  }
+}
+
+@media (min-width: 1200px) {
+  .intro {
+    padding: 80px 0;
+  }
+}
