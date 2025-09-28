@@ -4,7 +4,7 @@ import Hero from "./components/Hero";
 import About from "./components/About";
 import Programs from "./components/Programs";
 import Footer from "./components/Footer";
-import Format_study from "./components/Format_study";
+import FormatStudy from "./components/FormatStudy";
 import Benefits from "./components/Benefits";
 class App extends React.Component {
   render() {
@@ -15,7 +15,7 @@ class App extends React.Component {
           <Hero />
           <About />
           <Programs />
-          <Format_study />
+          <FormatStudy />
           <Benefits />
         </main>
         <Footer />

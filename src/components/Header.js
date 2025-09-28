@@ -1,6 +1,5 @@
 import React from "react";
 import logo from "../img/head/logo.jpg";
-import { debounce } from "lodash";
 
 class Header extends React.Component {
   constructor(props) {
