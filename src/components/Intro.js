@@ -3,7 +3,6 @@ import React from "react";
 class Intro extends React.Component {
   handleBackClick = () => {
     window.history.back();
-    // или: window.history.go(-1);
   };
   render() {
     const { title, image, button, text, modifiers, theme } = this.props;

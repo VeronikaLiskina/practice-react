@@ -1,0 +1,81 @@
+@import "mixins.scss";
+.contact {
+  background-color: #0051ff;
+  color: #fff;
+  font-family: Arial, "Helvetica Neue", Helvetica, sans-serif;
+  padding: 80px 10px;
+  text-align: center;
+
+  &__title {
+    font-size: 2rem;
+    font-weight: 600;
+    margin-bottom: 15px;
+    text-transform: uppercase;
+
+    @media (min-width: 992px) {
+      font-size: 4.5rem;
+    }
+    @media (min-width: 600px) {
+      font-size: 3.5rem;
+    }
+    @media (min-width: 500px) {
+      font-size: 3rem;
+    }
+  }
+
+  &__subtitle {
+    font-size: 1.2rem;
+    font-weight: 400;
+    margin-bottom: 40px;
+
+    @media (min-width: 768px) {
+      font-size: 1.9rem;
+    }
+  }
+
+  &__form {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 15px;
+    margin-bottom: 20px;
+  }
+
+  &__input {
+    flex: 1 1 250px;
+    min-width: 200px;
+    max-width: 320px;
+    padding: 15px 20px;
+    border: none;
+    font-size: 1rem;
+    outline: none;
+
+    &::placeholder {
+      color: #aaa;
+    }
+  }
+
+  &__button {
+    background-color: #f9c74f;
+    color: #000;
+    font-weight: 600;
+    font-size: 1rem;
+    padding: 15px 25px;
+    border: none;
+    border-radius: 30px;
+    cursor: pointer;
+    transition: background 0.3s ease;
+
+    &:hover {
+      background-color: #f0b935;
+    }
+  }
+
+  &__privacy {
+    font-size: 0.8rem;
+    color: #e0e0e0;
+    max-width: 600px;
+    margin: 0 auto;
+    line-height: 1.4;
+  }
+}
