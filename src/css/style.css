@@ -6,23 +6,31 @@
   border: 0;
 }
 
-*, *::before, *:after {
+*,
+*::before,
+*:after {
   box-sizing: border-box;
 }
 
-:focus, :active {
+:focus,
+:active {
   outline: none;
 }
 
-a:focus, a:active {
+a:focus,
+a:active {
   outline: none;
 }
 
-nav, footer, header, aside {
+nav,
+footer,
+header,
+aside {
   display: block;
 }
 
-html, body {
+html,
+body {
   height: 100%;
   width: 100%;
   font-size: 100%;
@@ -33,7 +41,9 @@ html, body {
   -webkit-text-size-adjust: 100%;
 }
 
-input, button, textarea {
+input,
+button,
+textarea {
   font-family: inherit;
 }
 
@@ -50,7 +60,8 @@ button::-moz-focus-inner {
   border: 0;
 }
 
-a, a:visited {
+a,
+a:visited {
   text-decoration: none;
 }
 
@@ -66,7 +77,12 @@ img {
   vertical-align: top;
 }
 
-h1, h2, h3, h4, h5, h6 {
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
   font-size: inherit;
   font-weight: 400;
 }
@@ -99,9 +115,9 @@ h1, h2, h3, h4, h5, h6 {
   height: 100px;
   width: 100px;
   -o-object-fit: contain;
-     object-fit: contain;
+  object-fit: contain;
   -o-object-position: 0 0;
-     object-position: 0 0;
+  object-position: 0 0;
 }
 .header__menu {
   order: 2;
@@ -165,7 +181,9 @@ h1, h2, h3, h4, h5, h6 {
     background: none;
     border: none;
   }
-  .header__burger span, .header__burger::before, .header__burger::after {
+  .header__burger span,
+  .header__burger::before,
+  .header__burger::after {
     content: "";
     position: absolute;
     left: 0;
@@ -431,7 +449,8 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 @keyframes float-heart {
-  0%, 100% {
+  0%,
+  100% {
     transform: translateY(0) rotate(0);
   }
   50% {
@@ -587,7 +606,7 @@ h1, h2, h3, h4, h5, h6 {
     height: 20px;
     filter: brightness(0) invert(1);
     -o-object-fit: contain;
-       object-fit: contain;
+    object-fit: contain;
   }
   .hero__address-2 {
     display: none;
@@ -648,7 +667,7 @@ h1, h2, h3, h4, h5, h6 {
     height: 25px;
     filter: brightness(0) invert(1);
     -o-object-fit: contain;
-       object-fit: contain;
+    object-fit: contain;
   }
   .hero__address-2 {
     display: none;
@@ -719,9 +738,9 @@ h1, h2, h3, h4, h5, h6 {
   width: 100%;
   height: 100%;
   -o-object-fit: cover;
-     object-fit: cover;
+  object-fit: cover;
   -o-object-position: 0 0;
-     object-position: 0 0;
+  object-position: 0 0;
   position: relative;
 }
 .about__blue-block {
@@ -783,7 +802,8 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 @keyframes float-blue-block {
-  0%, 100% {
+  0%,
+  100% {
     transform: rotate(45deg) translateY(0) translate(0, 0);
   }
   50% {
@@ -1009,9 +1029,9 @@ h1, h2, h3, h4, h5, h6 {
   width: 100%;
   height: 100%;
   -o-object-fit: cover;
-     object-fit: cover;
+  object-fit: cover;
   -o-object-position: center;
-     object-position: center;
+  object-position: center;
   transition: transform 0.3s ease;
 }
 .photo-slider__photo:hover {
@@ -1299,7 +1319,7 @@ h1, h2, h3, h4, h5, h6 {
   top: 0px;
   left: 0px;
   -o-object-fit: contain;
-     object-fit: contain;
+  object-fit: contain;
   flex: 1 1 50%;
   z-index: 50;
   overflow: visible;
@@ -1519,7 +1539,7 @@ h1, h2, h3, h4, h5, h6 {
   width: 100%;
   height: 100%;
   -o-object-fit: cover;
-     object-fit: cover;
+  object-fit: cover;
 }
 @media (min-width: 640px) {
   .format-item__image {
@@ -1678,9 +1698,10 @@ h1, h2, h3, h4, h5, h6 {
   width: 100%;
   height: auto;
   -o-object-fit: contain;
-     object-fit: contain;
+  object-fit: contain;
 }
-.benefits::before, .benefits::after {
+.benefits::before,
+.benefits::after {
   content: "+";
   position: absolute;
   font-size: 60px;
@@ -2284,7 +2305,8 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 @keyframes float-heart {
-  0%, 100% {
+  0%,
+  100% {
     transform: translateY(0) rotate(0);
   }
   50% {
@@ -2464,7 +2486,7 @@ h1, h2, h3, h4, h5, h6 {
   display: inline-block;
   width: 44px;
   height: 44px;
-  background-image: url("/src/img/main/info-block/check-icon.svg");
+  background-image: url("/src/img/main/check-icon.svg");
   background-size: contain;
   background-repeat: no-repeat;
   background-position: center;
@@ -2676,7 +2698,7 @@ html {
   width: 100%;
   height: 100%;
   -o-object-fit: contain;
-     object-fit: contain;
+  object-fit: contain;
   overflow: visible;
   z-index: 50;
 }
