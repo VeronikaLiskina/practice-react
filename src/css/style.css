@@ -6,31 +6,23 @@
   border: 0;
 }
 
-*,
-*::before,
-*:after {
+*, *::before, *:after {
   box-sizing: border-box;
 }
 
-:focus,
-:active {
+:focus, :active {
   outline: none;
 }
 
-a:focus,
-a:active {
+a:focus, a:active {
   outline: none;
 }
 
-nav,
-footer,
-header,
-aside {
+nav, footer, header, aside {
   display: block;
 }
 
-html,
-body {
+html, body {
   height: 100%;
   width: 100%;
   font-size: 100%;
@@ -41,9 +33,7 @@ body {
   -webkit-text-size-adjust: 100%;
 }
 
-input,
-button,
-textarea {
+input, button, textarea {
   font-family: inherit;
 }
 
@@ -60,8 +50,7 @@ button::-moz-focus-inner {
   border: 0;
 }
 
-a,
-a:visited {
+a, a:visited {
   text-decoration: none;
 }
 
@@ -77,12 +66,7 @@ img {
   vertical-align: top;
 }
 
-h1,
-h2,
-h3,
-h4,
-h5,
-h6 {
+h1, h2, h3, h4, h5, h6 {
   font-size: inherit;
   font-weight: 400;
 }
@@ -115,9 +99,9 @@ h6 {
   height: 100px;
   width: 100px;
   -o-object-fit: contain;
-  object-fit: contain;
+     object-fit: contain;
   -o-object-position: 0 0;
-  object-position: 0 0;
+     object-position: 0 0;
 }
 .header__menu {
   order: 2;
@@ -181,9 +165,7 @@ h6 {
     background: none;
     border: none;
   }
-  .header__burger span,
-  .header__burger::before,
-  .header__burger::after {
+  .header__burger span, .header__burger::before, .header__burger::after {
     content: "";
     position: absolute;
     left: 0;
@@ -449,8 +431,7 @@ h6 {
 }
 
 @keyframes float-heart {
-  0%,
-  100% {
+  0%, 100% {
     transform: translateY(0) rotate(0);
   }
   50% {
@@ -606,7 +587,7 @@ h6 {
     height: 20px;
     filter: brightness(0) invert(1);
     -o-object-fit: contain;
-    object-fit: contain;
+       object-fit: contain;
   }
   .hero__address-2 {
     display: none;
@@ -667,7 +648,7 @@ h6 {
     height: 25px;
     filter: brightness(0) invert(1);
     -o-object-fit: contain;
-    object-fit: contain;
+       object-fit: contain;
   }
   .hero__address-2 {
     display: none;
@@ -738,9 +719,9 @@ h6 {
   width: 100%;
   height: 100%;
   -o-object-fit: cover;
-  object-fit: cover;
+     object-fit: cover;
   -o-object-position: 0 0;
-  object-position: 0 0;
+     object-position: 0 0;
   position: relative;
 }
 .about__blue-block {
@@ -802,8 +783,7 @@ h6 {
 }
 
 @keyframes float-blue-block {
-  0%,
-  100% {
+  0%, 100% {
     transform: rotate(45deg) translateY(0) translate(0, 0);
   }
   50% {
@@ -1029,9 +1009,9 @@ h6 {
   width: 100%;
   height: 100%;
   -o-object-fit: cover;
-  object-fit: cover;
+     object-fit: cover;
   -o-object-position: center;
-  object-position: center;
+     object-position: center;
   transition: transform 0.3s ease;
 }
 .photo-slider__photo:hover {
@@ -1319,7 +1299,7 @@ h6 {
   top: 0px;
   left: 0px;
   -o-object-fit: contain;
-  object-fit: contain;
+     object-fit: contain;
   flex: 1 1 50%;
   z-index: 50;
   overflow: visible;
@@ -1328,11 +1308,10 @@ h6 {
   position: relative;
   font-size: 1.25rem;
   font-weight: 700;
-  color: #ffffff;
+  color: #000;
   line-height: 1.5;
   margin-bottom: 1rem;
   text-align: left;
-  text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.5);
   z-index: 2;
 }
 @media (min-width: 300px) {
@@ -1539,7 +1518,7 @@ h6 {
   width: 100%;
   height: 100%;
   -o-object-fit: cover;
-  object-fit: cover;
+     object-fit: cover;
 }
 @media (min-width: 640px) {
   .format-item__image {
@@ -1698,10 +1677,9 @@ h6 {
   width: 100%;
   height: auto;
   -o-object-fit: contain;
-  object-fit: contain;
+     object-fit: contain;
 }
-.benefits::before,
-.benefits::after {
+.benefits::before, .benefits::after {
   content: "+";
   position: absolute;
   font-size: 60px;
@@ -2305,8 +2283,7 @@ h6 {
 }
 
 @keyframes float-heart {
-  0%,
-  100% {
+  0%, 100% {
     transform: translateY(0) rotate(0);
   }
   50% {
@@ -2602,6 +2579,84 @@ h6 {
   }
 }
 
+.course-builder {
+  padding: 40px 0;
+  font-family: Arial, "Helvetica Neue", Helvetica, sans-serif;
+}
+.course-builder .container {
+  max-width: 900px;
+  margin: 0 auto;
+  background: #fff;
+  padding: 30px;
+  border-radius: 16px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+}
+.course-builder__title {
+  text-align: center;
+  margin-bottom: 2rem;
+}
+.course-builder__block {
+  margin-bottom: 2rem;
+  padding-bottom: 1.25rem;
+  border-bottom: 1px solid #eee;
+}
+.course-builder__block input,
+.course-builder__block textarea {
+  display: block;
+  width: 100%;
+  padding: 10px;
+  margin-bottom: 10px;
+  border-radius: 8px;
+  border: 1px solid #ccc;
+  font-size: 1.25rem;
+}
+.course-builder__block input:focus,
+.course-builder__block textarea:focus {
+  border-color: #0038af;
+  outline: none;
+}
+.course-builder__block button {
+  background-color: #0038af;
+  color: #fff;
+  padding: 0.5rem 1rem;
+  border: none;
+  font-size: 1.2rem;
+  border-radius: 0.5rem;
+  cursor: pointer;
+  margin-top: 5px;
+}
+.course-builder__block button:hover {
+  background-color: #0038af;
+}
+.course-builder__subtitle {
+  font-size: 1.75rem;
+  margin-bottom: 1rem;
+}
+.course-builder__label {
+  font-size: 1.2rem;
+  margin-top: 1rem;
+  margin-bottom: 0.5rem;
+}
+.course-builder__save-btn {
+  display: block;
+  width: 100%;
+  background-color: #0038af;
+  color: #fff;
+  padding: 1rem;
+  border: none;
+  font-size: 1.5rem;
+  border-radius: 0.5rem;
+  cursor: pointer;
+  margin-top: 2rem;
+}
+.course-builder__save-btn:hover {
+  background-color: #0051ff;
+}
+.course-builder button[onClick] {
+  margin-top: 1rem;
+  font-size: 2rem;
+}
+
 html {
   font-size: 16px;
   margin: 0;
@@ -2698,7 +2753,7 @@ html {
   width: 100%;
   height: 100%;
   -o-object-fit: contain;
-  object-fit: contain;
+     object-fit: contain;
   overflow: visible;
   z-index: 50;
 }

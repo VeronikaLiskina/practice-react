@@ -1,11 +1,15 @@
 import React from "react";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import Home from "./pages/Home";
-import ICProgramming from "./pages/ProgramDetails/1C-programming";
-import Java from "./pages/ProgramDetails/Java";
-import WebProgramming from "./pages/ProgramDetails/Web-programming";
+import CourseTemplate from "./pages/CourseTemplate";
 import Header from "./components/Header";
 import Footer from "./components/Footer";
+
+import AdminDashboard from "./admin/AdminDashboard"; // оболочка админки
+import CourseBuilder from "./admin/CourseBuilder";
+import CourseList from "./admin/CourseList";
+import EditCourse from "./admin/EditCourse";
+import DeleteCourse from "./admin/DeleteCourse";
 
 function App() {
   return (
@@ -14,15 +18,18 @@ function App() {
         <Header />
         <main className="main">
           <Routes>
-            {/* Главная страница */}
             <Route path="/" element={<Home />} />
+            <Route path="/course/:slug" element={<CourseTemplate />} />
 
-            {/* Страницы программ */}
-            <Route path="/1c-programming" element={<ICProgramming />} />
-            <Route path="/java" element={<Java />} />
-            <Route path="/web-programming" element={<WebProgramming />} />
-
-            {/* Добавьте маршруты для остальных 3 программ */}
+            {/* Админка с вложенными страницами */}
+            <Route path="/admin" element={<AdminDashboard />}>
+              <Route index element={<CourseList />} />
+              <Route path="create" element={<CourseBuilder isEdit={false} />} />
+              <Route
+                path="edit/:slug"
+                element={<CourseBuilder isEdit={true} />}
+              />
+            </Route>
           </Routes>
         </main>
         <Footer />
