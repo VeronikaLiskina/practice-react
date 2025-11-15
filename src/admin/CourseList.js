@@ -1,3 +1,4 @@
+// CourseList.js
 import React, { Component } from "react";
 import { Link } from "react-router-dom";
 import DeleteCourse from "./DeleteCourse";
@@ -53,32 +54,44 @@ class CourseList extends Component {
     const { courses, loading, error, deleteModalVisible, courseToDelete } =
       this.state;
 
-    if (loading) return <p>Загрузка курсов...</p>;
-    if (error) return <p style={{ color: "red" }}>{error}</p>;
+    if (loading)
+      return <p className="course-list__message">Загрузка курсов...</p>;
+    if (error)
+      return (
+        <p className="course-list__message course-list__message--error">
+          {error}
+        </p>
+      );
 
     return (
       <div className="course-list">
-        <h2>Список курсов</h2>
-        <Link to="/admin/create" className="btn btn-primary">
-          Создать новый курс
-        </Link>
+        <div className="course-list__header">
+          <h2>Список курсов</h2>
+          <Link to="/admin/create" className="btn btn-primary">
+            Создать новый курс
+          </Link>
+        </div>
 
-        <table className="course-table">
-          <thead>
-            <tr>
-              <th>Название</th>
-              <th>Slug</th>
-              <th>Модификатор CSS</th>
-              <th>Действия</th>
-            </tr>
-          </thead>
-          <tbody>
+        {courses.length === 0 ? (
+          <p className="course-list__message">Нет курсов</p>
+        ) : (
+          <div className="course-list__grid">
             {courses.map((course) => (
-              <tr key={course.slug}>
-                <td>{course.title}</td>
-                <td>{course.slug}</td>
-                <td>{course.modifiers}</td>
-                <td>
+              <div className="course-card">
+                <h3 className="course-card__title">{course.title}</h3>
+
+                <div className="course-card__info">
+                  <div className="course-card__field">
+                    <strong>Slug:</strong>{" "}
+                    <code className="course-card__code">{course.slug}</code>
+                  </div>
+                  <div className="course-card__field">
+                    <strong>Модификатор:</strong>{" "}
+                    {course.modifiers || <em>—</em>}
+                  </div>
+                </div>
+
+                <div className="course-card__actions">
                   <Link
                     to={`/admin/edit/${course.slug}`}
                     className="btn btn-secondary"
@@ -88,15 +101,14 @@ class CourseList extends Component {
                   <button
                     onClick={() => this.openDeleteModal(course)}
                     className="btn btn-danger"
-                    style={{ marginLeft: "10px" }}
                   >
                     Удалить
                   </button>
-                </td>
-              </tr>
+                </div>
+              </div>
             ))}
-          </tbody>
-        </table>
+          </div>
+        )}
 
         {deleteModalVisible && courseToDelete && (
           <DeleteCourse

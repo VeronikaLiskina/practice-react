@@ -3,15 +3,30 @@ import express from "express";
 import bodyParser from "body-parser";
 import cors from "cors";
 import path from "path";
+import { fileURLToPath } from "url";
 
 const app = express();
 const PORT = 5000;
-const DATA_FILE = path.join(process.cwd(), "src", "data", "courses.json");
 
+const __filename = fileURLToPath(import.meta.url);
+const __dirname = path.dirname(__filename);
+
+// Пути к данным и статике
+const DATA_FILE = path.join(__dirname, "src", "data", "courses.json");
+const imagesPath = path.join(__dirname, "public", "img");
+const publicPath = path.join(__dirname, "public"); // папка с index.html
+
+console.log("Static images served from:", imagesPath);
+
+// Middleware
 app.use(bodyParser.json());
 app.use(cors());
 
-// ===== Helper =====
+// Статика
+app.use("/uploads", express.static(imagesPath));
+app.use(express.static(publicPath)); // теперь index.html будет доступен по "/"
+
+// ===== Helper functions =====
 function readCourses() {
   try {
     return JSON.parse(fs.readFileSync(DATA_FILE, "utf8"));
@@ -75,4 +90,8 @@ app.delete("/api/courses/:slug", (req, res) => {
   res.sendStatus(200);
 });
 
-app.listen(PORT, () => console.log(`API started on http://localhost:${PORT}`));
+// ===== Start server =====
+app.listen(PORT, () =>
+  console.log(`Server running on http://localhost:${PORT}`)
+);
+export default app;

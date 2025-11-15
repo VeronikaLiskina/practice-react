@@ -1,6 +1,5 @@
 
 import React from 'react';
-import DirectorImage from '../img/main/director.webp';
 import PhotoSlider from './PhotoSlider';
 
 class About extends React.Component {
@@ -37,7 +36,7 @@ class About extends React.Component {
               <div className="about__image-wrapper">
                 <div className="about__blue-block"></div>
                 <div className="about__image">
-                  <img src={DirectorImage} alt="Директор центра" loading="lazy" />
+                  <img src="/img/main/director.webp" alt="Директор центра" loading="lazy" />
                 </div>
               </div>
             </div>

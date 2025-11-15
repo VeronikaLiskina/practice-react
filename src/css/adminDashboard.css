@@ -1,0 +1,44 @@
+.admin-dashboard {
+  display: flex;
+  min-height: 100vh;
+  background-color: #f8f9fa;
+  font-family: Arial, "Helvetica Neue", Helvetica, sans-serif;
+}
+
+.admin-sidebar {
+  width: 240px;
+  background-color: #ffffff;
+  box-shadow: 2px 0 8px rgba(0, 0, 0, 0.1);
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+}
+.admin-sidebar h2 {
+  margin-top: 1.4rem;
+  margin-bottom: 0.6rem;
+  font-size: 2rem;
+  color: #333;
+}
+.admin-sidebar nav {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+.admin-sidebar a {
+  padding: 2px 15px;
+  text-decoration: none;
+  color: #555;
+  font-size: 1.2rem;
+  border-radius: 6px;
+  transition: background-color 0.2s, color 0.2s;
+}
+.admin-sidebar a:hover, .admin-sidebar a.active {
+  background-color: #e9ecef;
+  font-weight: 500;
+}
+
+.admin-content {
+  flex: 1;
+  padding: 24px;
+  overflow-y: auto;
+}

@@ -1,6 +1,4 @@
 import React from "react";
-import heartIcon from "../img/hero/heart.png";
-import nerpaIcon from "../img/hero/nerpa.png";
 
 class Pricing extends React.Component {
   render() {
@@ -29,22 +27,22 @@ class Pricing extends React.Component {
     return (
       <section className="pricing">
         <img
-          src={heartIcon}
+          src="/img/hero/heart.png"
           alt="Сердечко"
           className="pricing__decor pricing__decor--heart"
         />
         <img
-          src={heartIcon}
+          src="/img/hero/heart.png"
           alt="Сердечко"
           className="pricing__decor pricing__decor--heart2"
         />
         <img
-          src={heartIcon}
+          src="/img/hero/heart.png"
           alt="Сердечко"
           className="pricing__decor pricing__decor--heart3"
         />
         <img
-          src={nerpaIcon}
+          src="/img/hero/nerpa.png"
           alt="Нерпа"
           className="pricing__decor pricing__decor--nerpa"
         />

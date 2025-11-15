@@ -1,5 +1,4 @@
 import React from "react";
-import studentImage from "../img/main/benefits/benefits.png";
 class Benefits extends React.Component {
   render() {
     return (
@@ -9,7 +8,10 @@ class Benefits extends React.Component {
             <h2 className="benefits__title title">ЧТО ВЫ ПОЛУЧАЕТЕ</h2>
             <div className="benefits__row">
               <div className="benefits__image">
-                <img src={studentImage} alt="Студент с планшетом" />
+                <img
+                  src="/img/main/benefits/benefits.png"
+                  alt="Студент с планшетом"
+                />
               </div>
               <ul className="benefits__list">
                 <li className="benefits__item">

@@ -1,3 +1,4 @@
+// CourseBuilder.js
 import React, { Component } from "react";
 import { useParams, useNavigate } from "react-router-dom";
 
@@ -15,13 +16,19 @@ class CourseBuilder extends Component {
     this.state = {
       title: "",
       slug: "",
-      image: "",
       modifiers: "",
       order: 0,
-      intro: { title: "", text: "", buttonText: "" },
+
+      // Intro с image по умолчанию
+      intro: { title: "", text: "", buttonText: "", image: "" },
+
       infoBlock: { title: "", text: "", items: [""] },
-      pricing: [{ period: "", price: "", discount: "", badge: "" }],
+      pricing: [{ period: "", price: "", discount: "" }], // ← badge удалён
       faq: [{ question: "", answer: "" }],
+
+      // Design
+      design: { backgroundColor: "", backgroundImage: "" },
+
       loading: false,
       error: null,
     };
@@ -33,20 +40,49 @@ class CourseBuilder extends Component {
     if (isEdit && params.slug) {
       try {
         this.setState({ loading: true });
-        const res = await fetch(`http://localhost:5000/api/courses/${params.slug}`);
+        const res = await fetch(
+          `http://localhost:5000/api/courses/${params.slug}`
+        );
         if (!res.ok) throw new Error("Курс не найден");
         const course = await res.json();
+
+        // Преобразуем pricing, игнорируя badge
+        const pricing = course.sections?.pricing?.plans?.map((plan) => ({
+          period: plan.period || "",
+          price: plan.price || "",
+          discount: plan.discount || "",
+        })) || [{ period: "", price: "", discount: "" }];
 
         this.setState({
           title: course.title,
           slug: course.slug,
-          image: course.image,
           modifiers: course.modifiers,
           order: course.order || 0,
-          intro: course.sections?.intro || { title: "", text: "", buttonText: "" },
-          infoBlock: course.sections?.infoBlock || { title: "", text: "", items: [""] },
-          pricing: course.sections?.pricing?.plans || [{ period: "", price: "", discount: "", badge: "" }],
-          faq: course.sections?.faq?.questions || [{ question: "", answer: "" }],
+
+          intro: course.sections?.intro || {
+            title: "",
+            text: "",
+            buttonText: "",
+            image: "",
+          },
+
+          infoBlock: course.sections?.infoBlock || {
+            title: "",
+            text: "",
+            items: [""],
+          },
+
+          pricing,
+
+          faq: course.sections?.faq?.questions || [
+            { question: "", answer: "" },
+          ],
+
+          design: course.sections?.design || {
+            backgroundColor: "",
+            backgroundImage: "",
+          },
+
           loading: false,
         });
       } catch (err) {
@@ -55,7 +91,7 @@ class CourseBuilder extends Component {
     }
   }
 
-  // ======== ОБРАБОТЧИКИ =========
+  // ========= HANDLERS =========
   handleChange = (e) => this.setState({ [e.target.name]: e.target.value });
 
   handleIntroChange = (e) => {
@@ -89,7 +125,7 @@ class CourseBuilder extends Component {
     this.setState({
       pricing: [
         ...this.state.pricing,
-        { period: "", price: "", discount: "", badge: "" },
+        { period: "", price: "", discount: "" }, // ← без badge
       ],
     });
   };
@@ -101,12 +137,14 @@ class CourseBuilder extends Component {
   };
 
   addFAQ = () => {
-    this.setState({
-      faq: [...this.state.faq, { question: "", answer: "" }],
-    });
+    this.setState({ faq: [...this.state.faq, { question: "", answer: "" }] });
   };
 
-  // ======== СОХРАНЕНИЕ =========
+  handleDesignChange = (key, value) => {
+    this.setState({ design: { ...this.state.design, [key]: value } });
+  };
+
+  // ========= SAVE =========
   handleSave = async () => {
     const { isEdit, navigate, params } = this.props;
 
@@ -114,7 +152,6 @@ class CourseBuilder extends Component {
       id: `${this.state.slug}-id`,
       slug: this.state.slug,
       title: this.state.title,
-      image: this.state.image,
       modifiers: this.state.modifiers,
       order: Number(this.state.order),
       sections: {
@@ -122,6 +159,7 @@ class CourseBuilder extends Component {
         infoBlock: this.state.infoBlock,
         pricing: { title: "ВЫБЕРИТЕ ТАРИФ", plans: this.state.pricing },
         faq: { questions: this.state.faq },
+        design: this.state.design,
       },
     };
 
@@ -139,29 +177,30 @@ class CourseBuilder extends Component {
 
       if (!response.ok) throw new Error("Ошибка при сохранении курса");
 
-      alert(isEdit ? "✅ Курс обновлён!" : "✅ Курс успешно создан!");
+      alert(isEdit ? "Курс обновлён!" : "Курс создан!");
       navigate("/admin");
     } catch (error) {
       console.error("Ошибка:", error);
-      alert("❌ Не удалось сохранить курс");
+      alert("Не удалось сохранить курс");
     }
   };
 
-  // ======== РЕНДЕР =========
+  // ========= RENDER =========
   render() {
     const {
       title,
       slug,
-      image,
       modifiers,
       order,
       intro,
       infoBlock,
       pricing,
       faq,
+      design,
       loading,
       error,
     } = this.state;
+
     const { isEdit } = this.props;
 
     if (loading) return <p>Загрузка...</p>;
@@ -171,12 +210,13 @@ class CourseBuilder extends Component {
       <div className="course-builder">
         <div className="container">
           <h2 className="course-builder__title title">
-            {isEdit ? "✏️ Редактировать курс" : "🛠 Конструктор курса"}
+            {isEdit ? " Редактировать курс" : " Конструктор курса"}
           </h2>
 
           {/* Основная информация */}
           <div className="course-builder__block">
             <h3 className="course-builder__subtitle">Основная информация</h3>
+
             <input
               name="title"
               value={title}
@@ -188,13 +228,7 @@ class CourseBuilder extends Component {
               value={slug}
               onChange={this.handleChange}
               placeholder="Slug (URL)"
-              disabled={isEdit} // при редактировании slug менять нельзя
-            />
-            <input
-              name="image"
-              value={image}
-              onChange={this.handleChange}
-              placeholder="Ссылка на картинку"
+              disabled={isEdit}
             />
             <input
               name="modifiers"
@@ -209,11 +243,28 @@ class CourseBuilder extends Component {
               onChange={this.handleChange}
               placeholder="Порядок отображения"
             />
+            <input
+              name="backgroundColor"
+              value={design.backgroundColor}
+              onChange={(e) =>
+                this.handleDesignChange("backgroundColor", e.target.value)
+              }
+              placeholder="Цвет фона (#RRGGBB)"
+            />
+            <input
+              name="backgroundImage"
+              value={design.backgroundImage}
+              onChange={(e) =>
+                this.handleDesignChange("backgroundImage", e.target.value)
+              }
+              placeholder="Путь к картинке"
+            />
           </div>
 
           {/* Intro */}
           <div className="course-builder__block">
             <h3 className="course-builder__subtitle">Intro</h3>
+
             <input
               name="title"
               value={intro.title}
@@ -231,6 +282,12 @@ class CourseBuilder extends Component {
               value={intro.buttonText}
               onChange={this.handleIntroChange}
               placeholder="Текст кнопки"
+            />
+            <input
+              name="image"
+              value={intro.image}
+              onChange={this.handleIntroChange}
+              placeholder="Ссылка на картинку Intro"
             />
           </div>
 
@@ -255,7 +312,7 @@ class CourseBuilder extends Component {
               }
               placeholder="Текст InfoBlock"
             />
-            <h4 className="course-builder__label">Пункты списка:</h4>
+            <h4>Пункты списка:</h4>
             {infoBlock.items.map((item, index) => (
               <input
                 key={index}
@@ -269,34 +326,28 @@ class CourseBuilder extends Component {
             <button onClick={this.addInfoItem}>+ Добавить пункт</button>
           </div>
 
-          {/* Pricing */}
+          {/* Pricing — без badge */}
           <div className="course-builder__block">
             <h3 className="course-builder__subtitle">Pricing</h3>
             {pricing.map((plan, index) => (
-              <div key={index}>
+              <div key={index} className="course-builder__pricing-plan">
                 <input
                   name="period"
-                  placeholder="Период"
                   value={plan.period}
                   onChange={(e) => this.handlePricingChange(index, e)}
+                  placeholder="Период"
                 />
                 <input
                   name="price"
-                  placeholder="Цена"
                   value={plan.price}
                   onChange={(e) => this.handlePricingChange(index, e)}
+                  placeholder="Цена"
                 />
                 <input
                   name="discount"
-                  placeholder="Скидка"
                   value={plan.discount}
                   onChange={(e) => this.handlePricingChange(index, e)}
-                />
-                <input
-                  name="badge"
-                  placeholder="Бейдж"
-                  value={plan.badge}
-                  onChange={(e) => this.handlePricingChange(index, e)}
+                  placeholder="Скидка"
                 />
               </div>
             ))}
@@ -310,15 +361,15 @@ class CourseBuilder extends Component {
               <div key={index}>
                 <input
                   name="question"
-                  placeholder="Вопрос"
                   value={q.question}
                   onChange={(e) => this.handleFAQChange(index, e)}
+                  placeholder="Вопрос"
                 />
                 <textarea
                   name="answer"
-                  placeholder="Ответ"
                   value={q.answer}
                   onChange={(e) => this.handleFAQChange(index, e)}
+                  placeholder="Ответ"
                 />
               </div>
             ))}
@@ -329,7 +380,7 @@ class CourseBuilder extends Component {
             className="course-builder__save-btn"
             onClick={this.handleSave}
           >
-            💾 {isEdit ? "Сохранить изменения" : "Сохранить курс"}
+            {isEdit ? "Сохранить изменения" : "Сохранить курс"}
           </button>
         </div>
       </div>

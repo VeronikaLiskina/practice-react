@@ -1,5 +1,4 @@
 import React from "react";
-import logo from "../img/head/logo.jpg";
 
 class Header extends React.Component {
   constructor(props) {
@@ -42,7 +41,7 @@ class Header extends React.Component {
       <>
         <div className="header__logo">
           <a href="https://itssl.ru" title="www.itssl.ru">
-            <img src={logo} alt="Логотип IT-центра ВЗЛЕТ" />
+            <img src="/img/head/logo.jpg" alt="Логотип IT-центра ВЗЛЕТ" />
           </a>
         </div>
 

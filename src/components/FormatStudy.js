@@ -1,47 +1,42 @@
 import React from "react";
-import Image1 from "../img/main/study-format/pic_1.jpg";
-import Image2 from "../img/main/study-format/pic_2.jpg";
-import Image3 from "../img/main/study-format/pic_3.jpg";
-import Image4 from "../img/main/study-format/pic_4.jpg";
-import Image5 from "../img/main/study-format/pic_5.jpg";
-import Image6 from "../img/main/study-format/pic_6.jpg";
+
 class FormatSection extends React.Component {
   render() {
     const formatItems = [
       {
         id: 1,
         text: "Онлайн и офлайн обучение",
-        img: Image1,
+        img: "/img/main/study-format/pic_1.jpg",
         rotate: "left",
       },
       {
         id: 2,
         text: "Вход в крупнейшее иркутское IT-сообщество",
-        img: Image2,
+        img: "/img/main/study-format/pic_2.jpg",
         rotate: "none",
       },
       {
         id: 3,
         text: "Система наставничества",
-        img: Image3,
+        img: "/img/main/study-format/pic_3.jpg",
         rotate: "right",
       },
       {
         id: 4,
         text: "Связь с наставником 24/7",
-        img: Image4,
+        img: "/img/main/study-format/pic_4.jpg",
         rotate: "strong-left",
       },
       {
         id: 5,
         text: "Мастер-классы, хакатоны, интенсивы от ведущих специалистов",
-        img: Image5,
+        img: "/img/main/study-format/pic_5.jpg",
         rotate: "none",
       },
       {
         id: 6,
         text: "Фундаментальное разностороннее обучение",
-        img: Image6,
+        img: "/img/main/study-format/pic_6.jpg",
         rotate: "right",
       },
     ];

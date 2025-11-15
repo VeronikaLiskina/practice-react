@@ -56,7 +56,7 @@ class CourseTemplate extends Component {
       <>
         <Intro
           title={sections.intro.title}
-          image={course.image}
+          image={`http://localhost:5000${sections.intro.image}`}
           text={sections.intro.text}
           button={<a href="#pricing">{sections.intro.buttonText}</a>}
           modifiers={course.modifiers}

@@ -166,7 +166,7 @@
     position: relative;
     font-size: 1.25rem;
     font-weight: 700;
-    color: #000;
+    color: #fff;
     line-height: 1.5;
     margin-bottom: 1rem;
     text-align: left;
@@ -196,117 +196,6 @@
     }
     @media (min-width: 1200px) {
       padding: 1.5rem 3rem;
-    }
-  }
-
-  // Индивидуальные фоны
-  .program-web {
-    background-color: #0051ff;
-    .ibg {
-      & img {
-        @media (min-width: 320px) {
-          min-width: 239px;
-          min-height: 256px;
-          top: 60px;
-          left: -240px;
-        }
-        @media (min-width: 370px) {
-          left: -180px;
-          top: 50px;
-        }
-        @media (min-width: 400px) {
-          left: -180px;
-          top: 40px;
-        }
-        @media (min-width: 450px) {
-          min-width: 305px;
-          min-height: 327px;
-          top: -10px;
-          left: -150px;
-        }
-        @media (min-width: 576px) {
-          min-width: 370px;
-          min-height: 397px;
-          top: -40px;
-        }
-        @media (min-width: 640px) {
-          min-width: 370px;
-          min-height: 397px;
-          left: -135px;
-        }
-        @media (min-width: 768px) {
-          left: -120px;
-        }
-        @media (min-width: 992px) {
-          min-width: 465px;
-          min-height: 499px;
-          top: -70px;
-          left: -130px;
-        }
-        @media (min-width: 1200px) {
-          min-width: 507px;
-          min-height: 544px;
-        }
-      }
-    }
-  }
-
-  .program-1c {
-    background-color: #0038af;
-    background-image: url("../img/main/programs/1с.gif");
-  }
-
-  .program-java {
-    background-color: #3389ff;
-    background-image: url("../img/main/programs/java.webp");
-  }
-
-  .program-camp {
-    background-color: #0051ff;
-    .ibg {
-      & img {
-        @media (min-width: 320px) {
-          min-width: 243px;
-          min-height: 232px;
-          top: 30px;
-          left: -230px;
-        }
-        @media (min-width: 370px) {
-          left: -190px;
-        }
-        @media (min-width: 450px) {
-          left: -180px;
-          top: -10px;
-          min-width: 348px;
-          min-height: 333px;
-        }
-        @media (min-width: 550px) {
-          min-width: 367px;
-          min-height: 351px;
-          left: -150px;
-          top: -40px;
-        }
-        @media (min-width: 700px) {
-          min-width: 367px;
-          min-height: 351px;
-          left: -100px;
-        }
-        @media (min-width: 768px) {
-          min-width: 370px;
-          min-height: 351px;
-          left: -110px;
-        }
-        @media (min-width: 992px) {
-          min-width: 465px;
-          min-height: 431px;
-        }
-        @media (min-width: 1200px) {
-          min-width: 507px;
-          min-height: 491px;
-          left: -130px;
-          top: -60px;
-        }
-      }
     }
   }
 }

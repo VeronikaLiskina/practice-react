@@ -1,8 +1,4 @@
 import React from "react";
-import heroIcon from "../img/hero/__1.png";
-import heroImage from "../img/hero/-1jpg-.jpg";
-import heartIcon from "../img/hero/heart.png";
-import nerpaIcon from "../img/hero/nerpa.png";
 
 class Hero extends React.Component {
   render() {
@@ -19,7 +15,7 @@ class Hero extends React.Component {
               </h1>
               <div className="hero__address-1">
                 <div className="hero-address__icon">
-                  <img src={heroIcon} alt="Иконка адреса" />
+                  <img src="/img/hero/__1.png" alt="Иконка адреса" />
                 </div>
                 <div className="hero-address__title">
                   АКАДЕМИКА КУРЧАТОВА, 13, ИРКУТСК
@@ -28,24 +24,28 @@ class Hero extends React.Component {
             </div>
             <div className="hero__column hero__column-image">
               <img
-                src={heartIcon}
+                src="/img/hero/heart.png"
                 alt="Сердечко"
                 className="hero__decor hero__decor--heart"
               />
               <img
-                src={nerpaIcon}
+                src="/img/hero/nerpa.png"
                 alt="Нерпа"
                 className="hero__decor hero__decor--nerpa"
               />
 
               <div className="hero__image">
-                <img src={heroImage} alt="IT-центр ВЗЛЕТ" loading="lazy" />
+                <img
+                  src="/img/hero/-1jpg-.jpg"
+                  alt="IT-центр ВЗЛЕТ"
+                  loading="lazy"
+                />
               </div>
             </div>
           </div>
           <div className="hero__address-2">
             <div className="hero-address__icon">
-              <img src={heroIcon} alt="Иконка адреса" />
+              <img src="/img/hero/__1.png" alt="Иконка адреса" />
             </div>
             <div className="hero-address__title">
               АКАДЕМИКА КУРЧАТОВА, 13, ИРКУТСК

@@ -1,4 +1,3 @@
-@charset "UTF-8";
 .programs {
   padding: 1rem 0;
   font-family: Arial, Helvetica, sans-serif;
@@ -204,7 +203,7 @@
   position: relative;
   font-size: 1.25rem;
   font-weight: 700;
-  color: #000;
+  color: #fff;
   line-height: 1.5;
   margin-bottom: 1rem;
   text-align: left;
@@ -247,137 +246,5 @@
 @media (min-width: 1200px) {
   .programs__link {
     padding: 1.5rem 3rem;
-  }
-}
-.programs .program-web {
-  background-color: #0051ff;
-}
-@media (min-width: 320px) {
-  .programs .program-web .ibg img {
-    min-width: 239px;
-    min-height: 256px;
-    top: 60px;
-    left: -240px;
-  }
-}
-@media (min-width: 370px) {
-  .programs .program-web .ibg img {
-    left: -180px;
-    top: 50px;
-  }
-}
-@media (min-width: 400px) {
-  .programs .program-web .ibg img {
-    left: -180px;
-    top: 40px;
-  }
-}
-@media (min-width: 450px) {
-  .programs .program-web .ibg img {
-    min-width: 305px;
-    min-height: 327px;
-    top: -10px;
-    left: -150px;
-  }
-}
-@media (min-width: 576px) {
-  .programs .program-web .ibg img {
-    min-width: 370px;
-    min-height: 397px;
-    top: -40px;
-  }
-}
-@media (min-width: 640px) {
-  .programs .program-web .ibg img {
-    min-width: 370px;
-    min-height: 397px;
-    left: -135px;
-  }
-}
-@media (min-width: 768px) {
-  .programs .program-web .ibg img {
-    left: -120px;
-  }
-}
-@media (min-width: 992px) {
-  .programs .program-web .ibg img {
-    min-width: 465px;
-    min-height: 499px;
-    top: -70px;
-    left: -130px;
-  }
-}
-@media (min-width: 1200px) {
-  .programs .program-web .ibg img {
-    min-width: 507px;
-    min-height: 544px;
-  }
-}
-.programs .program-1c {
-  background-color: #0038af;
-  background-image: url("../img/main/programs/1с.gif");
-}
-.programs .program-java {
-  background-color: #3389ff;
-  background-image: url("../img/main/programs/java.webp");
-}
-.programs .program-camp {
-  background-color: #0051ff;
-}
-@media (min-width: 320px) {
-  .programs .program-camp .ibg img {
-    min-width: 243px;
-    min-height: 232px;
-    top: 30px;
-    left: -230px;
-  }
-}
-@media (min-width: 370px) {
-  .programs .program-camp .ibg img {
-    left: -190px;
-  }
-}
-@media (min-width: 450px) {
-  .programs .program-camp .ibg img {
-    left: -180px;
-    top: -10px;
-    min-width: 348px;
-    min-height: 333px;
-  }
-}
-@media (min-width: 550px) {
-  .programs .program-camp .ibg img {
-    min-width: 367px;
-    min-height: 351px;
-    left: -150px;
-    top: -40px;
-  }
-}
-@media (min-width: 700px) {
-  .programs .program-camp .ibg img {
-    min-width: 367px;
-    min-height: 351px;
-    left: -100px;
-  }
-}
-@media (min-width: 768px) {
-  .programs .program-camp .ibg img {
-    min-width: 370px;
-    min-height: 351px;
-    left: -110px;
-  }
-}
-@media (min-width: 992px) {
-  .programs .program-camp .ibg img {
-    min-width: 465px;
-    min-height: 431px;
-  }
-}
-@media (min-width: 1200px) {
-  .programs .program-camp .ibg img {
-    min-width: 507px;
-    min-height: 491px;
-    left: -130px;
-    top: -60px;
   }
 }
