@@ -1,7 +1,7 @@
 // CourseList.js
 import React, { Component } from "react";
 import { Link } from "react-router-dom";
-import DeleteCourse from "./DeleteCourse";
+import DeleteCourse from "./DeleteCourse.js";
 
 class CourseList extends Component {
   state = {
