@@ -1,6 +1,6 @@
 
 import React from 'react';
-import PhotoSlider from './PhotoSlider';
+import PhotoSlider from './PhotoSlider.js';
 
 class About extends React.Component {
   componentDidMount() {
