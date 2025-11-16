@@ -60,14 +60,5 @@ pnpm-lock.yaml
 *.orig
 
 # Бинарные файлы (если не используете Git LFS)
-*.png
-*.jpg
-*.jpeg
-*.gif
-*.ico
-*.svg
 *.pdf
-*.zip
 *.tar.gz
-*.exe
-*.dll
