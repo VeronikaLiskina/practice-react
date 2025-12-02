@@ -79,13 +79,29 @@ app.put("/api/courses/:slug", (req, res) => {
 });
 
 // Удалить курс
-app.delete("/api/courses/:slug", (req, res) => {
-  const { slug } = req.params;
+app.delete("/api/courses/:slug?", (req, res) => {
+  let { slug } = req.params;
+
   let courses = readCourses();
+
+  // Особый случай — пустой slug
+  if (!slug) {
+    const index = courses.findIndex((c) => !c.slug || c.slug === "");
+    if (index !== -1) {
+      courses.splice(index, 1);
+      writeCourses(courses);
+      return res.sendStatus(200);
+    }
+    return res.status(404).json({ error: "Курс со пустым slug не найден" });
+  }
+
+  // Обычное удаление
   const initialLength = courses.length;
   courses = courses.filter((c) => c.slug !== slug);
+
   if (courses.length === initialLength)
     return res.status(404).json({ error: "Курс не найден" });
+
   writeCourses(courses);
   res.sendStatus(200);
 });

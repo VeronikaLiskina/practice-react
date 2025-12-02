@@ -36,7 +36,8 @@ class CourseList extends Component {
 
   deleteCourse = () => {
     const { courseToDelete } = this.state;
-    fetch(`http://localhost:5000/api/courses/${courseToDelete.slug}`, {
+    const slug = courseToDelete.slug || "";
+    fetch(`http://localhost:5000/api/courses/${slug}`, {
       method: "DELETE",
     })
       .then((res) => {

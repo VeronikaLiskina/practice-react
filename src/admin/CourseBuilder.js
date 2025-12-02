@@ -33,7 +33,29 @@ class CourseBuilder extends Component {
       error: null,
     };
   }
+  removeInfoItem = (index) => {
+    const items = [...this.state.infoBlock.items];
+    if (items.length > 1) {
+      items.splice(index, 1);
+      this.setState({ infoBlock: { ...this.state.infoBlock, items } });
+    }
+  };
 
+  removePricingPlan = (index) => {
+    const pricing = [...this.state.pricing];
+    if (pricing.length > 1) {
+      pricing.splice(index, 1);
+      this.setState({ pricing });
+    }
+  };
+
+  removeFAQ = (index) => {
+    const faq = [...this.state.faq];
+    if (faq.length > 1) {
+      faq.splice(index, 1);
+      this.setState({ faq });
+    }
+  };
   async componentDidMount() {
     const { isEdit, params } = this.props;
 
@@ -314,14 +336,21 @@ class CourseBuilder extends Component {
             />
             <h4>Пункты списка:</h4>
             {infoBlock.items.map((item, index) => (
-              <input
-                key={index}
-                value={item}
-                onChange={(e) =>
-                  this.handleInfoItemChange(index, e.target.value)
-                }
-                placeholder={`Пункт ${index + 1}`}
-              />
+              <div key={index} className="course-builder__item-row">
+                <input
+                  value={item}
+                  onChange={(e) =>
+                    this.handleInfoItemChange(index, e.target.value)
+                  }
+                  placeholder={`Пункт ${index + 1}`}
+                />
+                <button
+                  className="danger-btn"
+                  onClick={() => this.removeInfoItem(index)}
+                >
+                  ✖
+                </button>
+              </div>
             ))}
             <button onClick={this.addInfoItem}>+ Добавить пункт</button>
           </div>
@@ -349,6 +378,12 @@ class CourseBuilder extends Component {
                   onChange={(e) => this.handlePricingChange(index, e)}
                   placeholder="Скидка"
                 />
+                <button
+                  className="danger-btn"
+                  onClick={() => this.removePricingPlan(index)}
+                >
+                  ✖
+                </button>
               </div>
             ))}
             <button onClick={this.addPricingPlan}>+ Добавить тариф</button>
@@ -358,7 +393,7 @@ class CourseBuilder extends Component {
           <div className="course-builder__block">
             <h3 className="course-builder__subtitle">FAQ</h3>
             {faq.map((q, index) => (
-              <div key={index}>
+              <div key={index} className="course-builder__faq-row">
                 <input
                   name="question"
                   value={q.question}
@@ -371,6 +406,12 @@ class CourseBuilder extends Component {
                   onChange={(e) => this.handleFAQChange(index, e)}
                   placeholder="Ответ"
                 />
+                <button
+                  className="danger-btn"
+                  onClick={() => this.removeFAQ(index)}
+                >
+                  ✖
+                </button>
               </div>
             ))}
             <button onClick={this.addFAQ}>+ Добавить вопрос</button>

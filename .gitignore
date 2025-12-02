@@ -41,7 +41,10 @@ Thumbs.db
 /out/
 .next/  # Для Next.js
 
-
+# Деплой
+/.env
+/.env.production
+.env.staging
 
 # Тесты
 /junit.xml

@@ -75,3 +75,22 @@
   margin-top: 1rem;
   font-size: 2rem;
 }
+.course-builder .danger-btn {
+  background: #005;
+  color: #fff;
+  border: none;
+  cursor: pointer;
+  padding: 5px 10px;
+  margin-left: 10px;
+  border-radius: 4px;
+}
+.course-builder .danger-btn:hover {
+  background: #d82323;
+}
+.course-builder .course-builder__item-row,
+.course-builder .course-builder__pricing-plan,
+.course-builder .course-builder__faq-row {
+  display: flex;
+  gap: 10px;
+  align-items: flex-start;
+}

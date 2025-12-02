@@ -52,9 +52,6 @@ class Header extends React.Component {
           <a href="#teachers" onClick={this.closeMenu}>
             Преподаватели
           </a>
-          <a href="#price" onClick={this.closeMenu}>
-            Стоимость
-          </a>
         </nav>
 
         <div className="header__phone">+7 (902) 178-55-11</div>
