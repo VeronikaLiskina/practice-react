@@ -1,13 +1,15 @@
 import React from "react";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
-import Home from "./pages/Home/Home.js";
-import CourseTemplate from "./pages/CourseTemplate/CourseTemplate.js";
-import Header from "./components/Header.js";
-import Footer from "./components/Footer.js";
+import Home from "./pages/Home";
+import CourseTemplate from "./pages/CourseTemplate";
+import Header from "./components/Header";
+import Footer from "./components/Footer";
 
-import AdminDashboard from "./admin/AdminDashboard.js"; // оболочка админки
-import CourseBuilder from "./admin/CourseBuilder.js";
-import CourseList from "./admin/CourseList.js";
+import AdminDashboard from "./admin/AdminDashboard"; // оболочка админки
+import CourseBuilder from "./admin/CourseBuilder";
+import CourseList from "./admin/CourseList";
+import EditCourse from "./admin/EditCourse";
+import DeleteCourse from "./admin/DeleteCourse";
 
 function App() {
   return (

@@ -1,10 +1,10 @@
 import React, { Component } from "react";
 import { useParams } from "react-router-dom";
-import Intro from "../../components/Intro.js";
-import InfoBlock from "../../components/InfoBlock.js";
-import Pricing from "../../components/Pricing.js";
-import FAQ from "../../components/FAQ.js";
-import ContactForm from "../../components/ContactForm.js";
+import Intro from "../../components/Intro";
+import InfoBlock from "../../components/InfoBlock";
+import Pricing from "../../components/Pricing";
+import FAQ from "../../components/FAQ";
+import ContactForm from "../../components/ContactForm";
 
 function withParams(ComponentClass) {
   return function WrappedComponent(props) {

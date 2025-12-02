@@ -1,9 +1,9 @@
 import React from "react";
-import Hero from "../../components/Hero.js";
-import About from "../../components/About.js";
-import Programs from "../../components/Programs.js";
-import FormatStudy from "../../components/FormatStudy.js";
-import Benefits from "../../components/Benefits.js";
+import Hero from "../../components/Hero";
+import About from "../../components/About";
+import Programs from "../../components/Programs";
+import FormatStudy from "../../components/FormatStudy";
+import Benefits from "../../components/Benefits";
 
 class Home extends React.Component {
   render() {
