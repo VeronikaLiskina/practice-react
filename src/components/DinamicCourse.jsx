@@ -3,11 +3,11 @@ import React from 'react';
 import { useParams } from 'react-router-dom';
 
 // Импортируем ваши компоненты
-import Intro from "../components/Intro";
-import InfoBlock from "../components/InfoBlock"; 
-import Pricing from "../components/Pricing";
-import FAQ from "../components/FAQ";
-import ContactForm from "../components/ContactForm";
+import Intro from "./Intro";
+import InfoBlock from "./InfoBlock"; 
+import Pricing from "./Pricing";
+import FAQ from "./FAQ";
+import ContactForm from "./ContactForm";
 
 // Импортируем данные курсов
 import webCourse from '../data/courses/web-development.json';
